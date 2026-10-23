@@ -32,3 +32,4 @@ python-docx==1.1.2
 
 # Phase 23 — Phone number intelligence
 phonenumbers==8.13.49
+osintkit @ git+https://github.com/BalalaikaDev/osintkit.git@main
