@@ -143,6 +143,16 @@ New enrichment crawlers (in `backend/app/crawlers/`): Companies House, AlienVaul
 Reddit, Wikidata, Etherscan, maritime/AIS, Nominatim geocode — endpoints under
 `/enrich/…`. Keys live in `backend/app/runtime_api_keys.json` (gitignored).
 
+- _2026-10-23:_ the **21 stateless (no-Neo4j) crawlers** were extracted into a
+  standalone library, [`osintkit`](https://github.com/BalalaikaDev/osintkit), added to
+  `backend/requirements.txt`. The files under `backend/app/crawlers/` for those sources
+  are now thin re-export shims (`from osintkit.sources.<x> import …`), so every existing
+  `from crawlers.<x> import …` import is unchanged. The graph-coupled crawlers (those
+  taking `graph_db` / writing Neo4j) stay in-tree. `deep_seeker.py` (a bs4 class, not
+  wired in) also stays. osintkit gives each source one uniform interface
+  (`Source.fetch()` → `SourceResult`) plus a registry; the parsing logic is the same
+  code, moved verbatim.
+
 ## Kali MCP server (`kali-mcp/`, via Docker MCP Toolkit)
 
 Standalone MCP server exposing curated Kali Linux recon/scan tools to MCP clients
