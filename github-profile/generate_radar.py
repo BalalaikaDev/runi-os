@@ -19,10 +19,11 @@ DIM = "#6e79a8"
 
 SWEEP_SECONDS = 6
 
-# bearing: degrees clockwise from north; range: 0..1 of scope radius
+# bearing: degrees clockwise from north; range: 0..1 of scope radius;
+# size scales the blip, so the flagship repo reads first
 CONTACTS = [
-    {"name": "runi-os", "tag": "OSINT PLATFORM", "bearing": 52, "range": 0.62, "color": "#fcee0a"},
-    {"name": "kindle-ai-export", "tag": "READER // FORK", "bearing": 218, "range": 0.48, "color": "#00ff9c"},
+    {"name": "runi-os", "tag": "OSINT PLATFORM", "bearing": 52, "range": 0.62, "size": 1.8, "color": "#fcee0a"},
+    {"name": "kindle-ai-export", "tag": "READER // FORK", "bearing": 218, "range": 0.48, "size": 0.7, "color": "#00ff9c"},
 ]
 
 W, H = 860, 400
@@ -88,9 +89,10 @@ def build():
         anim = (f'<animate attributeName="opacity" values="1;0.25;0.25" keyTimes="0;0.75;1" '
                 f'dur="{SWEEP_SECONDS}s" begin="{begin}" repeatCount="indefinite"/>')
         out.append(f'<g opacity="0.25">{anim}')
-        out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="5" fill="{c["color"]}" filter="url(#glow)"/>')
-        out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="11" fill="none" stroke="{c["color"]}" stroke-opacity="0.6"/>')
-        out.append(f'<text x="{x+16:.1f}" y="{y+4:.1f}" font-size="11" fill="{c["color"]}">{c["name"]}</text>')
+        k = c["size"]
+        out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{5*k:.1f}" fill="{c["color"]}" filter="url(#glow)"/>')
+        out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{11*k:.1f}" fill="none" stroke="{c["color"]}" stroke-opacity="0.6"/>')
+        out.append(f'<text x="{x+11*k+5:.1f}" y="{y+4:.1f}" font-size="{max(10, 11*k**0.5):.0f}" fill="{c["color"]}">{c["name"]}</text>')
         out.append("</g>")
 
     # readout panel
