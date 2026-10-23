@@ -68,3 +68,8 @@ NEW/
 # ── Eval harness generated reports ───────────────────────────────
 eval/report.md
 eval/report.json
+
+# graphify generated graph (regenerate with: graphify update .)
+graphify-out/graph.json
+graphify-out/graph.html
+graphify-out/cache/
