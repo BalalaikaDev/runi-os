@@ -106,7 +106,7 @@ def build():
         out.append(f'<text x="{px+32}" y="{y+2}" font-size="14" font-weight="700" fill="{c["color"]}">{c["name"]}</text>')
         out.append(f'<text x="{px+32}" y="{y+18}" font-size="10" fill="{DIM}" letter-spacing="1">{c["tag"]} · BRG {c["bearing"]:03d}° · RNG {c["range"]:.2f}</text>')
         y += 56
-    out.append(f'<text x="{px}" y="{H-36}" font-size="10" fill="{DIM}" letter-spacing="1">neon ops // osint // radar hardware</text>')
+    out.append(f'<text x="{px}" y="{H-36}" font-size="10" fill="{DIM}" letter-spacing="1">runi osint // 45+ sources // one graph</text>')
 
     out.append(f'<rect width="{W}" height="{H}" rx="14" fill="url(#scan)"/>')
     out.append("</svg>")
