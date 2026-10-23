@@ -79,9 +79,9 @@
 </g></g>
 <circle cx="200" cy="200" r="3" fill="#ff2e97" filter="url(#glow)"/>
 <g opacity="0.25"><animate attributeName="opacity" values="1;0.25;0.25" keyTimes="0;0.75;1" dur="6s" begin="0.87s" repeatCount="indefinite"/>
-<circle cx="283.1" cy="135.1" r="9.0" fill="#fcee0a" filter="url(#glow)"/>
-<circle cx="283.1" cy="135.1" r="19.8" fill="none" stroke="#fcee0a" stroke-opacity="0.6"/>
-<text x="307.9" y="139.1" font-size="15" fill="#fcee0a">runi-os</text>
+<circle cx="283.1" cy="135.1" r="7.0" fill="#fcee0a" filter="url(#glow)"/>
+<circle cx="283.1" cy="135.1" r="15.4" fill="none" stroke="#fcee0a" stroke-opacity="0.6"/>
+<text x="303.5" y="139.1" font-size="13" fill="#fcee0a">runi-os</text>
 </g>
 <g opacity="0.25"><animate attributeName="opacity" values="1;0.25;0.25" keyTimes="0;0.75;1" dur="6s" begin="3.63s" repeatCount="indefinite"/>
 <circle cx="149.8" cy="264.3" r="3.5" fill="#00ff9c" filter="url(#glow)"/>

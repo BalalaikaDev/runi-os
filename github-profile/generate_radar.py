@@ -22,7 +22,7 @@ SWEEP_SECONDS = 6
 # bearing: degrees clockwise from north; range: 0..1 of scope radius;
 # size scales the blip, so the flagship repo reads first
 CONTACTS = [
-    {"name": "runi-os", "tag": "OSINT PLATFORM", "bearing": 52, "range": 0.62, "size": 1.8, "color": "#fcee0a"},
+    {"name": "runi-os", "tag": "OSINT PLATFORM", "bearing": 52, "range": 0.62, "size": 1.4, "color": "#fcee0a"},
     {"name": "kindle-ai-export", "tag": "READER // FORK", "bearing": 218, "range": 0.48, "size": 0.7, "color": "#00ff9c"},
 ]
 
